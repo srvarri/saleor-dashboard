@@ -8,13 +8,9 @@ pipeline {
         }
         stage('docker image build') {
             steps {
-                sh 'docker image build -t srvarri/saleor-dashboar:dv .'
+                sh 'docker image build -t saleor-dashboar:dv .'
             }
         }
-        stage('push image to registry') {
-            steps {
-                sh 'docker image push srvarri/saleor-dashboar:Dv'
-            }
-        }
+        
     }
 }    
