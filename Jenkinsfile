@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('vcs') {
             steps {
-                git branch: 'main', url: 'https://github.com/WorkshopsByKhaja/saleor-dashboard.git'
+                git branch: 'main', url: 'https://github.com/srvarri/saleor-dashboard.git'
             }
         }
-        stage('docker image build') {
+        stage('image build') {
             steps {
-                sh 'docker image build -t saleor-dashboar:dv .'
+                sh 'docker image build -t saleor:0.2 .'
             }
         }
         
