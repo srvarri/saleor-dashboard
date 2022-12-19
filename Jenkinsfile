@@ -1,23 +1,16 @@
 pipeline {
     agent any
-    triggers {
-        pollSCM('* * * * *')
-    }
     stages {
         stage('vcs') {
             steps {
-                git branch: 'main', url: 'https://github.com/WorkshopsByKhaja/saleor-dashboard.git'
+                git branch: 'main', url: 'https://github.com/srvarri/saleor-dashboard.git'
             }
         }
-        stage('docker image build') {
+        stage('image build') {
             steps {
-                sh 'docker image build -t shaikkhajaibrahim/saleor-dashboar:DEV .'
+                sh 'docker image build -t saleor:v .'
             }
         }
-        stage('push image to registry') {
-            steps {
-                sh 'docker image push shaikkhajaibrahim/saleor-dashboar:DEV'
-            }
-        }
+        
     }
-}
+}    
