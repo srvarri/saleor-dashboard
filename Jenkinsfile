@@ -8,7 +8,12 @@ pipeline {
         }
         stage('image build') {
             steps {
-                sh 'docker image build -t saleor:v .'
+                sh 'docker image build -t srvarri/saleor:v.1 .'
+            }
+        }
+        stage('push image') {
+            steps {
+                sh 'docker image push srvarri/saleor:v.1'
             }
         }
         
