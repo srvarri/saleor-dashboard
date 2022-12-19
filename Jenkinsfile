@@ -8,7 +8,7 @@ pipeline {
         }
         stage('image build') {
             steps {
-                sh 'docker image build -t saleor:0.2 .'
+                sh 'docker image build -t saleor:v .'
             }
         }
         
